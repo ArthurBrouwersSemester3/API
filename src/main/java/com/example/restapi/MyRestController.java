@@ -3,6 +3,7 @@ package com.example.restapi;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestParam;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.ArrayList;
@@ -19,22 +20,24 @@ public class MyRestController {
 
     @GetMapping("/hello1")
     @CrossOrigin(origins = "http://localhost:5174/")
-    public List<MyData> get() {
+    public List<MyData> get(@RequestParam String gym) {
         List<MyData> list = new ArrayList<>();
-
-        for (int i = 0; i < 13; i++) {
-            int finalI = i;
-            var tempdata = new MyData() {
-                {
-                    setTime(8 + finalI + ":00");
-                    setDay("1");
-                    setValue(30);
-                }
-            };
-            list.add(tempdata);
+        if(gym.equalsIgnoreCase("Eindhoven")){
+            for (int i = 0; i < 13; i++) {
+                int finalI = i;
+                var tempdata = new MyData() {
+                    {
+                        setTime(8 + finalI + ":00");
+                        setDay("1");
+                        setValue(30);
+                    }
+                };
+                list.add(tempdata);
+            }
         }
         return list;
     }
+
 
     class MyData {
         @JsonProperty("time")
