@@ -20,8 +20,8 @@ public class MyRestController {
 
     @GetMapping("/hello1")
     @CrossOrigin(origins = "http://localhost:5174/")
-    public List<MyData> get(@RequestParam String gym) {
-        List<MyData> list = new ArrayList<>();
+    public List<MyData> get(@RequestParam String gym, @RequestParam String button) {
+        List<MyData> list = new ArrayList<>();-
         if(gym.equalsIgnoreCase("Eindhoven")){
             for (int i = 0; i < 13; i++) {
                 int finalI = i;
