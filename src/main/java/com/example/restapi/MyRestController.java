@@ -10,7 +10,7 @@ import java.util.ArrayList;
 @RestController
 public class MyRestController {
 
-    @GetMapping("/hello")
+    @GetMapping("/gyms")
     @CrossOrigin(origins = "http://localhost:5174")
     public String[] GetGyms() {
         String[] messages = {"Breda", "Eindhoven", "Denbosch"};
@@ -18,10 +18,10 @@ public class MyRestController {
     }
 
 
-    @GetMapping("/hello1")
+    @GetMapping("/graphdata")
     @CrossOrigin(origins = "http://localhost:5174/")
-    public List<MyData> get(@RequestParam String gym, @RequestParam String button) {
-        List<MyData> list = new ArrayList<>();-
+    public List<MyData> get(@RequestParam String gym) {
+        List<MyData> list = new ArrayList<>();
         if(gym.equalsIgnoreCase("Eindhoven")){
             for (int i = 0; i < 13; i++) {
                 int finalI = i;
