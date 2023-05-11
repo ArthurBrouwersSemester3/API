@@ -37,7 +37,7 @@ public class MyRestController {
         }
         return list;
     }
-//testtt
+//test
 
     class MyData {
         @JsonProperty("time")
