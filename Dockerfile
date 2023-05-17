@@ -5,7 +5,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copy the compiled JAR file to the container
-COPY target/APIMaven-1.0-SNAPSHOT.jar/app/APIMaven-1.0-SNAPSHOT.jar
+COPY . .
 
 # Run the JAR file when the container starts
 CMD ["java", "-jar", "APIMaven-1.0-SNAPSHOT.jar"]
