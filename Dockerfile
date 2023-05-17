@@ -13,4 +13,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Run the JAR file when the container starts
-CMD ["java", "-jar", "target/APIMaven-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "com/example/restapi/MyApplication.java"]
