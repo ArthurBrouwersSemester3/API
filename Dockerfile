@@ -8,4 +8,4 @@ WORKDIR /app
 COPY . .
 
 # Run the JAR file when the container starts
-CMD ["java", "-jar", "APIMaven-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "APIMaven.jar"]
