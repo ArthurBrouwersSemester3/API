@@ -6,6 +6,11 @@ WORKDIR /app
 
 # Copy the compiled JAR file to the container
 COPY . .
+# Set the port to 8080
+ENV PORT=8080
+
+# Expose the port
+EXPOSE 8080
 
 # Run the JAR file when the container starts
-CMD ["java", "-jar", "APIMaven.jar"]
+CMD ["java", "-jar", "target/APIMaven-1.0-SNAPSHOT.jar"]
