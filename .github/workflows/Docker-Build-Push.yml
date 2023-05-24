@@ -19,8 +19,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build JAR
-        run: ./mvnw package
+      - 
+        name: Build JAR
+        run: ./mvn clean install
       -
         name: Build and push
         uses: docker/build-push-action@v4
