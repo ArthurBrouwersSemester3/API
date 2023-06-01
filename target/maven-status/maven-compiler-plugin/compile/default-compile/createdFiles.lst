@@ -3,4 +3,6 @@ com\example\restapi\MyRestController.class
 com\example\restapi\MyApplication.class
 com\example\restapi\MyRestController$MyData.class
 org\example\Main.class
+com\example\restapi\APIController.class
+com\example\restapi\Message.class
 Data.class
