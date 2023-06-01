@@ -1,0 +1,8 @@
+auth0:
+  audience: https;//gymstarsAPI/
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-t2m2li4fw54sig6t.us.auth0.com/
