@@ -1,8 +1,11 @@
 com\example\restapi\MyRestController$1.class
 com\example\restapi\MyRestController.class
+com\example\restapi\GymService.class
 com\example\restapi\MyApplication.class
 com\example\restapi\MyRestController$MyData.class
 org\example\Main.class
+com\example\restapi\GymRepository.class
 com\example\restapi\APIController.class
 com\example\restapi\Message.class
+com\example\restapi\Gym.class
 Data.class

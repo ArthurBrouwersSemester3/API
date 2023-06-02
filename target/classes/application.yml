@@ -1,8 +1,20 @@
-auth0:
-  audience: https;//gymstarsAPI/
+# Database connection properties
 spring:
+  datasource:
+    url: jdbc:sqlserver://mssqlstud.fhict.local;databaseName=dbi487249_gymstars
+    username: dbi487249_gymstars
+    password: Gymstars!
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: https://dev-t2m2li4fw54sig6t.us.auth0.com/
+
+# Auth0 properties
+auth0:
+  audience: https://gymstarsAPI/

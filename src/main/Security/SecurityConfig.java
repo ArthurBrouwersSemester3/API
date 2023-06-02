@@ -4,19 +4,16 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf()
-                .disable()
-                .authorizeHttpRequests()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .oauth2Login()
-        ;
+        http.authorizeRequests()
+                .mvcMatchers("/api/public").permitAll()
+                .mvcMatchers("/api/private").authenticated()
+                .mvcMatchers("/api/private-scoped").hasAuthority("SCOPE_read:messages")
+                .and().cors()
+                .and().oauth2ResourceServer().jwt();
         return http.build();
     }
 }

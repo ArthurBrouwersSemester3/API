@@ -4,17 +4,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.ArrayList;
 @RestController
 public class MyRestController {
 
+    private final GymService gymService;
+
+    @Autowired
+    public MyRestController(GymService gymService) {
+        this.gymService = gymService;
+    }
+
     @GetMapping("/gyms")
     @CrossOrigin(origins = "http://localhost:5174")
-    public String[] GetGyms() {
-        String[] messages = {"Breda", "Eindhoven", "Denbosch"};
-        return messages;
+    public List<String> getGyms() {
+        return gymService.getAllGymLocations();
     }
 
 
