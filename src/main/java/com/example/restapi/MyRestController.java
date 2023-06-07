@@ -1,5 +1,7 @@
 package com.example.restapi;
 
+import com.example.restapi.classes.Gym;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -8,14 +10,25 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.ArrayList;
 @RestController
+@AllArgsConstructor
 public class MyRestController {
+
+    GymRepository gymRepository;
 
     @GetMapping("/gyms")
     @CrossOrigin(origins = "http://localhost:5174")
-    public String[] GetGyms() {
-        String[] messages = {"Breda", "Eindhoven", "Denbosch"};
+    public List<String> GetGyms() {
+        List<Gym> GymList = gymRepository.findAll();
+        List<String> messages = new ArrayList<>();
+
+        for (Gym gym : GymList) {
+            String name = gym.getLocation();
+            messages.add(name);
+        }
+
         return messages;
     }
+
 
 
     @GetMapping("/graphdata")

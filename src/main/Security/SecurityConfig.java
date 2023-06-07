@@ -12,6 +12,7 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
+                .antMatchers("/gyms").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
