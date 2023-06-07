@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://db4free.net:3306/gymstars
+    username: gymstars
+    password: Gymstars!
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-t2m2li4fw54sig6t.us.auth0.com/
