@@ -1,5 +1,6 @@
-package com.example.restapi;
+package com.example.restapi.controllers;
 
+import com.example.restapi.classes.Message;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

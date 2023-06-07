@@ -1,5 +1,6 @@
-package com.example.restapi;
+package com.example.restapi.controllers;
 
+import com.example.restapi.DAL.GymRepository;
 import com.example.restapi.classes.Gym;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.ArrayList;
 @RestController
 @AllArgsConstructor
-public class MyRestController {
+public class GymController {
 
     GymRepository gymRepository;
 

@@ -1,4 +1,4 @@
-package com.example.restapi;
+package com.example.restapi.DAL;
 
 
 import com.example.restapi.classes.Gym;
