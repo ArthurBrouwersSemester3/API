@@ -11,13 +11,14 @@ public class SecurityConfig {
         http
                 .csrf()
                 .disable()
-                .authorizeHttpRequests()
-                .antMatchers("/gyms").permitAll()
-                .anyRequest()
-                .authenticated()
+                .authorizeRequests()
+                .antMatchers("/gyms").authenticated() // Require authentication for /gyms endpoint
+                .anyRequest().permitAll() // Allow access to other endpoints without authentication
                 .and()
                 .oauth2Login()
-        ;
+                .and()
+                .oauth2ResourceServer()
+                .jwt(); // Configure JWT as the resource server
         return http.build();
     }
 }

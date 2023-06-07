@@ -20,19 +20,22 @@ public class MyRestController {
     public List<String> GetGyms() {
         List<Gym> GymList = gymRepository.findAll();
         List<String> messages = new ArrayList<>();
+        System.out.println(GymList);
 
         for (Gym gym : GymList) {
+            System.out.println("1");
             String name = gym.getLocation();
             messages.add(name);
         }
-
+        System.out.println(messages);
+        System.out.println(gymRepository);
         return messages;
     }
 
 
 
     @GetMapping("/graphdata")
-    @CrossOrigin(origins = "http://localhost:5174/")
+    @CrossOrigin(origins = "http://localhost:5174")
     public List<MyData> get(@RequestParam String gym) {
         List<MyData> list = new ArrayList<>();
         if(gym.equalsIgnoreCase("Eindhoven")){

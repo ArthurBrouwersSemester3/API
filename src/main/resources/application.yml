@@ -1,10 +1,10 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://mssqlstud.fhict.local;databaseName=dbi487249_gymstars
-    username: dbi487249_gymstars
+    url: jdbc:mysql://db4free.net:3306/gymstars
+    username: gymstars
     password: Gymstars!
   jpa:
-    database-platform: org.hibernate.dialect.SQLServerDialect
+    database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
     hibernate:
       ddl-auto: update
@@ -13,12 +13,3 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: https://dev-t2m2li4fw54sig6t.us.auth0.com/
-
-auth0:
-  audience: https://gymstarsapi/
-
-server:
-  ssl:
-    key-store: /path/to/your/keystore
-    key-store-password: your-keystore-password
-    key-store-type: your-keystore-type
