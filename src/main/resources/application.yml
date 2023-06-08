@@ -3,6 +3,8 @@ spring:
     url: jdbc:mysql://db4free.net:3306/gymstars
     username: gymstars
     password: Gymstars!
+    hikari:
+      max-lifetime: 300000
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
