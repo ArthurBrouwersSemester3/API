@@ -2,6 +2,7 @@ package com.example.restapi.controllers;
 
 import com.example.restapi.DAL.GymRepository;
 import com.example.restapi.classes.Gym;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.ArrayList;
+
 @RestController
 @AllArgsConstructor
 public class GymController {
@@ -18,18 +20,20 @@ public class GymController {
 
     @GetMapping("/gyms")
     @CrossOrigin(origins = "http://localhost:5174")
-    public List<String> GetGyms() {
+    public List<String> GetGyms(HttpServletResponse response) {
         List<Gym> GymList = gymRepository.findAll();
         List<String> messages = new ArrayList<>();
-        System.out.println(GymList);
 
         for (Gym gym : GymList) {
-            System.out.println("1");
             String name = gym.getLocation();
             messages.add(name);
         }
-        System.out.println(messages);
-        System.out.println(gymRepository);
+
+        // Add caching headers
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
+
         return messages;
     }
 
