@@ -45,7 +45,7 @@ public class GymControllerTests {
             String gymName = gyms.getString(i);
             gymList.add(gymName);
         }
-
+//
         // Assert if it has the correct values
         assertThat(gymList).contains("Eindhoven", "Breda", "Den Bosch");
     }
