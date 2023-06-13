@@ -1,4 +1,4 @@
-package com.example.restapi.tests;
+package com.example.restapi;
 
 import org.json.JSONArray;
 import org.junit.jupiter.api.Test;
@@ -35,7 +35,6 @@ public class GymControllerTests {
         MvcResult result = resultActions.andReturn();
         String responseBody = result.getResponse().getContentAsString();
 
-        // Assert to check if api call succeeded
         assertThat(result.getResponse().getStatus()).isEqualTo(200);
 
         JSONArray gyms = new JSONArray(responseBody);
@@ -45,10 +44,10 @@ public class GymControllerTests {
             String gymName = gyms.getString(i);
             gymList.add(gymName);
         }
-//
+
         // Assert if it has the correct values
         assertThat(gymList).contains("Eindhoven", "Breda", "Den Bosch");
     }
-    }
+}
 
 

@@ -34,7 +34,7 @@ public class GymController {
         return messages;
     }
 
-
+//
     @GetMapping("/graphdata")
     @CrossOrigin(origins = "http://localhost:5174")
     public List<MyData> get(@RequestParam String gym) {

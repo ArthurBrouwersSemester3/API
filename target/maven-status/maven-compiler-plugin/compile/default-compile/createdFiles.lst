@@ -4,6 +4,5 @@ com\example\restapi\classes\Gym.class
 com\example\restapi\classes\MyData.class
 com\example\restapi\controllers\GymController.class
 com\example\restapi\DAL\GymRepository.class
-com\example\restapi\tests\GymControllerTests.class
 com\example\restapi\controllers\GymController$1.class
 Data.class
